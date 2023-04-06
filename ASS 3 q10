@@ -1,0 +1,33 @@
+Write a C Program to reverse string using pointers and function. 
+Enter any String :: Saveetha
+The Reverse of the String [ Saveetha ] is ::  ahteevaS
+
+#include <stdio.h>
+#include <string.h>
+void reverse_string(char*);
+int main()
+{
+char str[100];
+printf("harish192210189: ");
+printf("Enter any String :: ");
+scanf("%s", str);
+printf("The Reverse of the String [ %s ] is ::  ", str);
+reverse_string(str);
+printf("%s\n", str);
+return 0;
+}
+void reverse_string(char *str)
+{
+int i, j;
+char temp;
+i = 0;
+j = strlen(str) - 1;
+while (i < j)
+{
+temp = *(str + i);
+*(str + i) = *(str + j);
+*(str + j) = temp;
+i++;
+j--;
+}
+}
