@@ -1,0 +1,45 @@
+C Program to Check Whether a Number can be Expressed as Sum of Two Prime Numbers
+This program takes a positive integer from the user and checks whether that number can be expressed as the sum of two prime numbers.
+If the number can be expressed as the sum of two prime numbers, the output shows the combination of the prime numbers.
+Enter a positive integer: 34
+34 = 3 + 31
+34 = 5 + 29
+34 = 11 + 23
+34 = 17 + 17
+
+#include <stdio.h>
+int isPrime(int num)
+{
+int i;
+for (i = 2; i <= num / 2; i++)
+{
+if (num % i == 0) 
+{
+return 0;
+}
+}
+return 1;
+}
+int main() 
+{
+int num, i, flag = 0;
+printf("harish192210189: ");
+printf("Enter a positive integer: ");
+scanf("%d", &num);
+for (i = 2; i <= num / 2; i++) 
+{
+if (isPrime(i))
+{
+if (isPrime(num - i)) 
+{
+printf("%d = %d + %d\n", num, i, num - i);
+flag = 1;
+}
+}
+}
+if (!flag) 
+{
+printf("%d cannot be expressed as the sum of two prime numbers.\n", num);
+}
+return 0;
+}
