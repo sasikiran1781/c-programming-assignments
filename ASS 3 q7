@@ -1,0 +1,17 @@
+C Program to Find the Sum of ASCII Value of All Characters in the String
+
+#include <stdio.h>
+int main()
+{
+char str[100];
+int sum = 0, i;
+printf("harish192210189: ");
+printf("Enter the string: ");
+gets(str);
+for(i = 0; str[i] != '\0'; i++) 
+{
+sum += str[i];
+}
+printf("Sum of all characters: %d", sum);
+return 0;
+}
